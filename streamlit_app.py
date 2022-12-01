@@ -146,7 +146,7 @@ query = """query {
 url = "https://api.maple.finance/v1/graphql"
 r = requests.post(url, json={"query": query})
 raw_data = json.loads(r.text)
-st.json(raw_data)
+# st.json(raw_data)
 
 loans = raw_data["data"]["loans"]
 filtered = filter(lambda x: x["state"] not in ("Matured", "Expired", "Unfunded"), loans)
